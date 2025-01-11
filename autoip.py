@@ -123,8 +123,8 @@ def save_last_ip(ip):
 
 # Main function to monitor IP changes
 def monitor_ip_changes():
+    send_pushover_notification("Starting script", "Script is running...")
     while True:
-        send_pushover_notification("Starting script", "Script is running...")
         current_ip = get_public_ip()
         if current_ip:
             last_ip = load_last_ip()
